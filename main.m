@@ -11,11 +11,15 @@
 
 int main(int argc, char *argv[]) {
     
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    /*NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	
 	iosAudio = [[IosAudioController alloc] init];
 	
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
+    //int retVal = UIApplicationMain(argc, argv, nil, nil);
     [pool release];
-    return retVal;
+    return retVal;*/
+    
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, nil);
+    }
 }

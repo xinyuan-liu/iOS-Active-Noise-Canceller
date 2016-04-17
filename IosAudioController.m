@@ -11,6 +11,7 @@
 
 #define kOutputBus 0
 #define kInputBus 1
+#define BufferSize 128
 
 IosAudioController* iosAudio;
 
@@ -137,6 +138,11 @@ static OSStatus playbackCallback(void *inRefCon,
 	status = AudioComponentInstanceNew(inputComponent, &audioUnit);
 	checkStatus(status);
 	
+    Float32 bufferSizeInSec = (float)BufferSize/44100.0;
+    status=AudioSessionSetProperty(kAudioSessionProperty_PreferredHardwareIOBufferDuration,
+                                   sizeof(Float32), &bufferSizeInSec);
+    checkStatus(status);
+    
 	// Enable IO for recording
 	UInt32 flag = 1;
 	status = AudioUnitSetProperty(audioUnit, 
@@ -219,8 +225,8 @@ static OSStatus playbackCallback(void *inRefCon,
 	// Allocate our own buffers (1 channel, 16 bits per sample, thus 16 bits per frame, thus 2 bytes per frame).
 	// Practice learns the buffers used contain 512 frames, if this changes it will be fixed in processAudio.
 	tempBuffer.mNumberChannels = 1;
-	tempBuffer.mDataByteSize = 512 * 2;
-	tempBuffer.mData = malloc( 512 * 2 );
+	tempBuffer.mDataByteSize = BufferSize * 2;
+	tempBuffer.mData = malloc( BufferSize * 2 );
 	
 	// Initialise
 	status = AudioUnitInitialize(audioUnit);
@@ -263,7 +269,7 @@ static OSStatus playbackCallback(void *inRefCon,
 	}
 	
 	// copy incoming audio data to temporary buffer
-    
+    //printf("%d\n",bufferList->mBuffers[0].mDataByteSize);
 	memcpy(tempBuffer.mData, bufferList->mBuffers[0].mData, bufferList->mBuffers[0].mDataByteSize);
     
 }
