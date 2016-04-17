@@ -32,5 +32,5 @@
 
 @end
 
-// setup a global iosAudio variable, accessible everywhere
 extern IosAudioController* iosAudio;
+// setup a global iosAudio variable, accessible everywhere

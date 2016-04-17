@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Aruts.xcscheme</key>
+		<key>demo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D6058900D05DD3D006BFB54</key>
+		<key>4CB5DB891CC3C60E004E2EEA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CB5DBA21CC3C60E004E2EEA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CB5DBAD1CC3C60E004E2EEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

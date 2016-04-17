@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Active Noise Canceller.app"
-               BlueprintName = "Active Noise Canceller"
-               ReferencedContainer = "container:Active Noise Canceller.xcodeproj">
+               BlueprintIdentifier = "4CB5DB891CC3C60E004E2EEA"
+               BuildableName = "Active-Noise-Canceller.app"
+               BlueprintName = "Active-Noise-Canceller"
+               ReferencedContainer = "container:Active-Noise-Canceller.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,34 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4CB5DBA21CC3C60E004E2EEA"
+               BuildableName = "Active-Noise-Canceller.xctest"
+               BlueprintName = "Active-Noise-CancellerTests"
+               ReferencedContainer = "container:Active-Noise-Canceller.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4CB5DBAD1CC3C60E004E2EEA"
+               BuildableName = "Active-Noise-Canceller.xctest"
+               BlueprintName = "Active-Noise-CancellerUITests"
+               ReferencedContainer = "container:Active-Noise-Canceller.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Active Noise Canceller.app"
-            BlueprintName = "Active Noise Canceller"
-            ReferencedContainer = "container:Active Noise Canceller.xcodeproj">
+            BlueprintIdentifier = "4CB5DB891CC3C60E004E2EEA"
+            BuildableName = "Active-Noise-Canceller.app"
+            BlueprintName = "Active-Noise-Canceller"
+            ReferencedContainer = "container:Active-Noise-Canceller.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Active Noise Canceller.app"
-            BlueprintName = "Active Noise Canceller"
-            ReferencedContainer = "container:Active Noise Canceller.xcodeproj">
+            BlueprintIdentifier = "4CB5DB891CC3C60E004E2EEA"
+            BuildableName = "Active-Noise-Canceller.app"
+            BlueprintName = "Active-Noise-Canceller"
+            ReferencedContainer = "container:Active-Noise-Canceller.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Active Noise Canceller.app"
-            BlueprintName = "Active Noise Canceller"
-            ReferencedContainer = "container:Active Noise Canceller.xcodeproj">
+            BlueprintIdentifier = "4CB5DB891CC3C60E004E2EEA"
+            BuildableName = "Active-Noise-Canceller.app"
+            BlueprintName = "Active-Noise-Canceller"
+            ReferencedContainer = "container:Active-Noise-Canceller.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
