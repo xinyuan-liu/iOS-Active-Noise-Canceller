@@ -1,9 +1,9 @@
 //
-//  ViewController.m
-//  Active-Noise-Canceller
+//  ArutsViewController.m
+//  Aruts
 //
-//  Created by liuxinyuan on 16/4/17.
-//  Copyright © 2016年 liuxinyuan. All rights reserved.
+//  Created by Simon Epskamp on 10/11/10.
+//  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
 #import "ViewController.h"
