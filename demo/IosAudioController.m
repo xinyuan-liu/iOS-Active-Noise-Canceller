@@ -1,10 +1,11 @@
 //
 //  IosAudioController.m
-//  Aruts
+//  demo
 //
-//  Created by Simon Epskamp on 10/11/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Created by liuxinyuan on 16/4/17.
+//  Copyright © 2016年 liuxinyuan. All rights reserved.
 //
+
 
 #import "IosAudioController.h"
 #import <AudioToolbox/AudioToolbox.h>
