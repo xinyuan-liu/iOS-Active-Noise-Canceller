@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Active-Noise-Canceller.xcscheme</key>
+		<key>Aruts.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4CC7E5E71CC2B488004BB077</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4CC7E5FB1CC2B488004BB077</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4CC7E6061CC2B488004BB077</key>
+		<key>1D6058900D05DD3D006BFB54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
