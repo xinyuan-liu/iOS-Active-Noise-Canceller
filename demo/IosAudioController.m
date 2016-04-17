@@ -6,7 +6,7 @@
 //  Copyright © 2016年 liuxinyuan. All rights reserved.
 //
 
-
+#import "AudioProcess.h"
 #import "IosAudioController.h"
 #import <AudioToolbox/AudioToolbox.h>
 
@@ -268,11 +268,11 @@ static OSStatus playbackCallback(void *inRefCon,
         tempBuffer.mDataByteSize = sourceBuffer.mDataByteSize;
         tempBuffer.mData = malloc(sourceBuffer.mDataByteSize);
     }
-    printf("%d\n",bufferList->mBuffers[0].mDataByteSize);
-    // copy incoming audio data to temporary buffer
-    //printf("%d\n",bufferList->mBuffers[0].mDataByteSize);
-    memcpy(tempBuffer.mData, bufferList->mBuffers[0].mData, bufferList->mBuffers[0].mDataByteSize);
     
+    printf("%d\n",bufferList->mBuffers[0].mDataByteSize);
+    
+    // process the audio
+    process(bufferList->mBuffers[0].mData, tempBuffer.mData, bufferList->mBuffers[0].mDataByteSize);
 }
 
 /**

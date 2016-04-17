@@ -14,7 +14,5 @@
 
 }
 
-//extern IosAudioController* iosAudio;
-
 @end
 
