@@ -10,5 +10,15 @@
 
 void process(void *input_buffer, void *output_buffer, size_t buffer_size)
 {
-    memcpy(output_buffer, input_buffer, buffer_size);
+    //printf("%d\n",buffer_size);
+    short * input =(short *)input_buffer;
+    short * output =(short *)output_buffer;
+    for(int i=0;i<buffer_size/2;i++)
+    {
+        //printf("%d\n",(int)(*input));
+        *output=-(*input);
+        output++;
+        input++;
+    }
+    //memcpy(output_buffer, input_buffer, buffer_size);
 }

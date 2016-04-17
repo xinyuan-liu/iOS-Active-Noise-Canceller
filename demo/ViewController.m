@@ -15,12 +15,9 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[startButton addTarget:self action:@selector(startButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    //[stopButton addTarget:self action:@selector(stopButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     iosAudio = [[IosAudioController alloc] init];
-    printf("tag1\n");
+    printf("%d\n",sizeof(short));
     [iosAudio start];
-    printf("tag2\n");
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -43,7 +40,6 @@
 
 - (void)dealloc {
     [iosAudio stop];
-
     [super dealloc];
 }
 

@@ -269,8 +269,6 @@ static OSStatus playbackCallback(void *inRefCon,
         tempBuffer.mData = malloc(sourceBuffer.mDataByteSize);
     }
     
-    printf("%d\n",bufferList->mBuffers[0].mDataByteSize);
-    
     // process the audio
     process(bufferList->mBuffers[0].mData, tempBuffer.mData, bufferList->mBuffers[0].mDataByteSize);
 }

@@ -7,4 +7,5 @@
 //
 
 #import <Foundation/Foundation.h>
+
 void process(void *input_buffer, void *output_buffer, size_t buffer_size);
