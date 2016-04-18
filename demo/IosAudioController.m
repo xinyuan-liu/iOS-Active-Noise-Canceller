@@ -12,14 +12,13 @@
 
 #define kOutputBus 0
 #define kInputBus 1
-#define BufferSize 128
+
 
 IosAudioController* iosAudio;
 
 void checkStatus(int status){
     if (status) {
         printf("Status not 0! %d\n", status);
-        //		exit(1);
     }
 }
 
@@ -50,7 +49,6 @@ static OSStatus recordingCallback(void *inRefCon,
     bufferList.mNumberBuffers = 1;
     bufferList.mBuffers[0] = buffer;
     
-    // Then:
     // Obtain recorded samples
     
     OSStatus status;
@@ -83,28 +81,19 @@ static OSStatus playbackCallback(void *inRefCon,
                                  UInt32 inBusNumber,
                                  UInt32 inNumberFrames,
                                  AudioBufferList *ioData) {
-    // Notes: ioData contains buffers (may be more than one!)
+    // Notes: ioData contains buffers (may be more than one)
     // Fill them up as much as you can. Remember to set the size value in each buffer to match how
     // much data is in the buffer.
     
     for (int i=0; i < ioData->mNumberBuffers; i++) { // in practice we will only ever have 1 buffer, since audio format is mono
         AudioBuffer buffer = ioData->mBuffers[i];
         
-        //		NSLog(@"  Buffer %d has %d channels and wants %d bytes of data.", i, buffer.mNumberChannels, buffer.mDataByteSize);
+        //	NSLog(@"  Buffer %d has %d channels and wants %d bytes of data.", i, buffer.mNumberChannels, buffer.mDataByteSize);
         
         // copy temporary buffer data to output buffer
         UInt32 size = min(buffer.mDataByteSize, [iosAudio tempBuffer].mDataByteSize); // dont copy more data then we have, or then fits
         memcpy(buffer.mData, [iosAudio tempBuffer].mData, size);
         buffer.mDataByteSize = size; // indicate how much data we wrote in the buffer
-        
-        // uncomment to hear random noise
-        /*
-         UInt16 *frameBuffer = buffer.mData;
-         for (int j = 0; j < inNumberFrames; j++) {
-         frameBuffer[j] = rand();
-         }
-         */
-        
     }
     
     return noErr;
@@ -276,9 +265,9 @@ static OSStatus playbackCallback(void *inRefCon,
  Clean up.
  */
 - (void) dealloc {
-    [super	dealloc];
     AudioUnitUninitialize(audioUnit);
     free(tempBuffer.mData);
+    [super	dealloc];
 }
 
 @end

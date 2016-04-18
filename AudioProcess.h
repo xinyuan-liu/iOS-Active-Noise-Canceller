@@ -7,5 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#define BufferSize 128
+
 
 void process(void *input_buffer, void *output_buffer, size_t buffer_size);

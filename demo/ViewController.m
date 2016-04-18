@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     iosAudio = [[IosAudioController alloc] init];
-    printf("%d\n",sizeof(short));
+    printf("%d\n",(int)sizeof(short));
     [iosAudio start];
 }
 
