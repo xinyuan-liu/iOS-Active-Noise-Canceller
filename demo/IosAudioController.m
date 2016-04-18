@@ -257,7 +257,6 @@ static OSStatus playbackCallback(void *inRefCon,
 /**
  Change this funtion to decide what is done with incoming
  audio data from the microphone.
- Right now we copy it to our own temporary buffer.
  */
 - (void) processAudio: (AudioBufferList*) bufferList{
     AudioBuffer sourceBuffer = bufferList->mBuffers[0];
