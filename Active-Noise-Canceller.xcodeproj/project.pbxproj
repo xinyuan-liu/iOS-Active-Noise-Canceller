@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C628F8C1CC3D74F008BD49A /* AudioProcess.h in Sources */ = {isa = PBXBuildFile; fileRef = 4C628F8B1CC3D74F008BD49A /* AudioProcess.h */; };
 		4C628F8E1CC3D775008BD49A /* AudioProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C628F8D1CC3D775008BD49A /* AudioProcess.m */; };
 		4CB5DB8F1CC3C60E004E2EEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DB8E1CC3C60E004E2EEA /* main.m */; };
 		4CB5DB921CC3C60E004E2EEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5DB911CC3C60E004E2EEA /* AppDelegate.m */; };
@@ -38,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C628F8B1CC3D74F008BD49A /* AudioProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioProcess.h; path = ../AudioProcess.h; sourceTree = "<group>"; };
+		4C2FC9241CC4803500C8E72B /* AudioProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioProcess.h; sourceTree = "<group>"; };
 		4C628F8D1CC3D775008BD49A /* AudioProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioProcess.m; sourceTree = "<group>"; };
 		4CB5DB8A1CC3C60E004E2EEA /* Active-Noise-Canceller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Active-Noise-Canceller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB5DB8E1CC3C60E004E2EEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,7 +108,7 @@
 		4CB5DB8C1CC3C60E004E2EEA /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				4C628F8B1CC3D74F008BD49A /* AudioProcess.h */,
+				4C2FC9241CC4803500C8E72B /* AudioProcess.h */,
 				4C628F8D1CC3D775008BD49A /* AudioProcess.m */,
 				4CB5DB901CC3C60E004E2EEA /* AppDelegate.h */,
 				4CB5DB911CC3C60E004E2EEA /* AppDelegate.m */,
@@ -287,7 +286,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB5DBC21CC3C6FA004E2EEA /* IosAudioController.m in Sources */,
-				4C628F8C1CC3D74F008BD49A /* AudioProcess.h in Sources */,
 				4CB5DB951CC3C60E004E2EEA /* ViewController.m in Sources */,
 				4CB5DB921CC3C60E004E2EEA /* AppDelegate.m in Sources */,
 				4C628F8E1CC3D775008BD49A /* AudioProcess.m in Sources */,
