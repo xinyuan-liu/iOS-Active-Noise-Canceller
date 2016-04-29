@@ -38,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		4C2FC9241CC4803500C8E72B /* AudioProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioProcess.h; sourceTree = "<group>"; };
+		4C4B54871CD3B5CE00FEF582 /* Defination.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defination.h; sourceTree = "<group>"; };
 		4C628F8D1CC3D775008BD49A /* AudioProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioProcess.m; sourceTree = "<group>"; };
 		4CB5DB8A1CC3C60E004E2EEA /* Active-Noise-Canceller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Active-Noise-Canceller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB5DB8E1CC3C60E004E2EEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4C2FC9241CC4803500C8E72B /* AudioProcess.h */,
+				4C4B54871CD3B5CE00FEF582 /* Defination.h */,
 				4C628F8D1CC3D775008BD49A /* AudioProcess.m */,
 				4CB5DB901CC3C60E004E2EEA /* AppDelegate.h */,
 				4CB5DB911CC3C60E004E2EEA /* AppDelegate.m */,
@@ -434,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lxy.Active-Noise-Canceller";
 				PRODUCT_NAME = "Active-Noise-Canceller";
@@ -446,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lxy.Active-Noise-Canceller";
 				PRODUCT_NAME = "Active-Noise-Canceller";

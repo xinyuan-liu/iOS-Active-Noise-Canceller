@@ -10,6 +10,7 @@
 #import "IosAudioController.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+
 #define kOutputBus 0
 #define kInputBus 1
 
@@ -41,8 +42,8 @@ static OSStatus recordingCallback(void *inRefCon,
     AudioBuffer buffer;
     
     buffer.mNumberChannels = 1;
-    buffer.mDataByteSize = inNumberFrames * 2;
-    buffer.mData = malloc( inNumberFrames * 2 );
+    buffer.mDataByteSize = inNumberFrames * FrameSize;
+    buffer.mData = malloc( inNumberFrames * FrameSize );
     
     // Put buffer in a AudioBufferList
     AudioBufferList bufferList;
@@ -152,8 +153,23 @@ static OSStatus playbackCallback(void *inRefCon,
                                   sizeof(flag));
     checkStatus(status);
     
+
+    
     // Describe format
     AudioStreamBasicDescription audioFormat;
+    
+#ifdef FLOAT_FORMAT
+    audioFormat.mSampleRate = 44100.00;
+    audioFormat.mFormatID = kAudioFormatLinearPCM;
+    audioFormat.mFormatFlags = kAudioFormatFlagIsFloat | kAudioFormatFlagIsPacked;
+    audioFormat.mBitsPerChannel = 8 * sizeof(float);
+    audioFormat.mFramesPerPacket = 1;
+    audioFormat.mChannelsPerFrame = 1;
+    audioFormat.mBytesPerPacket = sizeof(float) * audioFormat.mFramesPerPacket;
+    audioFormat.mBytesPerFrame = sizeof(float) * audioFormat.mChannelsPerFrame;
+#endif
+    
+#ifdef INTEGER_FORMAT
     audioFormat.mSampleRate			= 44100.00;
     audioFormat.mFormatID			= kAudioFormatLinearPCM;
     audioFormat.mFormatFlags		= kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
@@ -162,6 +178,7 @@ static OSStatus playbackCallback(void *inRefCon,
     audioFormat.mBitsPerChannel		= 16;
     audioFormat.mBytesPerPacket		= 2;
     audioFormat.mBytesPerFrame		= 2;
+#endif
     
     // Apply format
     status = AudioUnitSetProperty(audioUnit,
@@ -215,12 +232,14 @@ static OSStatus playbackCallback(void *inRefCon,
     // Allocate our own buffers (1 channel, 16 bits per sample, thus 16 bits per frame, thus 2 bytes per frame).
     // Practice learns the buffers used contain 512 frames, if this changes it will be fixed in processAudio.
     tempBuffer.mNumberChannels = 1;
-    tempBuffer.mDataByteSize = BufferSize * 2;
-    tempBuffer.mData = malloc( BufferSize * 2 );
+    tempBuffer.mDataByteSize = BufferSize * FrameSize;
+    tempBuffer.mData = malloc( BufferSize * FrameSize );
     
     // Initialise
     status = AudioUnitInitialize(audioUnit);
     checkStatus(status);
+    
+    fft_init();
     
     return self;
 }
