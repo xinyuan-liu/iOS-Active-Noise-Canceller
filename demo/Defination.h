@@ -8,8 +8,9 @@
 
 #ifndef Defination_h
 #define Defination_h
+#define SampleRate 44100
 
-#define BufferSize 128
+#define BufferSize 32
 #define FLOAT_FORMAT
 
 #ifdef FLOAT_FORMAT

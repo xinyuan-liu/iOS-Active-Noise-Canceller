@@ -93,7 +93,9 @@ static OSStatus playbackCallback(void *inRefCon,
         
         // copy temporary buffer data to output buffer
         UInt32 size = min(buffer.mDataByteSize, [iosAudio tempBuffer].mDataByteSize); // dont copy more data then we have, or then fits
-        memcpy(buffer.mData, [iosAudio tempBuffer].mData, size);
+        //memcpy(buffer.mData, [iosAudio tempBuffer].mData, size);
+
+        get_play_data( buffer.mData , size);
         buffer.mDataByteSize = size; // indicate how much data we wrote in the buffer
     }
     
@@ -111,7 +113,7 @@ static OSStatus playbackCallback(void *inRefCon,
  */
 - (id) init {
     self = [super init];
-    
+    fft_init();
     OSStatus status;
     
     // Describe audio component
@@ -239,7 +241,7 @@ static OSStatus playbackCallback(void *inRefCon,
     status = AudioUnitInitialize(audioUnit);
     checkStatus(status);
     
-    fft_init();
+    
     
     return self;
 }
@@ -267,17 +269,17 @@ static OSStatus playbackCallback(void *inRefCon,
  audio data from the microphone.
  */
 - (void) processAudio: (AudioBufferList*) bufferList{
-    AudioBuffer sourceBuffer = bufferList->mBuffers[0];
+    /*AudioBuffer sourceBuffer = bufferList->mBuffers[0];
     
     // fix tempBuffer size if it's the wrong size
     if (tempBuffer.mDataByteSize != sourceBuffer.mDataByteSize) {
         free(tempBuffer.mData);
         tempBuffer.mDataByteSize = sourceBuffer.mDataByteSize;
         tempBuffer.mData = malloc(sourceBuffer.mDataByteSize);
-    }
+    }*/
     
     // process the audio
-    process(bufferList->mBuffers[0].mData, tempBuffer.mData, bufferList->mBuffers[0].mDataByteSize);
+    process(bufferList->mBuffers[0].mData, bufferList->mBuffers[0].mDataByteSize);
 }
 
 /**
