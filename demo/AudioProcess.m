@@ -15,6 +15,10 @@ const int n=BufferSize;
 const int nOver2=n/2;
 FFTSetup fftSetup;
 DSPSplitComplex fft_data;
+int offset=0;
+void * Cur_Pointer;
+void * output_buffer;
+
 
 typedef struct {
     void * head;
@@ -25,20 +29,24 @@ typedef struct {
     bool full_flag;
 }mQueue;
 
-void * output_buffer;
 
 mQueue q;
+
+static int cnt=0;
 
 void * pushQ(void * data,size_t data_size)
 {
     void * r=q.begin;
     if(q.full_flag)
     {
-        memcpy(q.end, data, data_size);
+        
+        //if(cnt<3)
+            memcpy(q.end, data, data_size);
         q.end=q.begin=q.begin+data_size;
         if(q.end==q.brk)
         {
             q.end=q.begin=q.head;
+            //cnt++;
         }
         
     }
@@ -88,9 +96,11 @@ void get_sample_from_begin(void *t)
     
 }
 
+
 void get_play_data (void *t,size_t size)
 {
     memcpy(t, output_buffer, size);
+    //get_sample(Cur_Pointer,offset+n*4, n*4, t);
 }
 
 void fft_init()
@@ -106,6 +116,7 @@ void fft_init()
     q.full_flag=0;
     
     output_buffer=malloc(BufferSize*4);
+    memset(output_buffer, 0, BufferSize*4);
 }
 
 //FFT: input_buffer -> fft_data , real to complex
@@ -126,16 +137,22 @@ void fft_inverse(void *output_buffer, size_t buffer_size)
 }
 
 
+
+void set_offset(int offset_)
+{
+    offset=offset_;
+}
+
 void process(void *input_buffer, size_t buffer_size)
 {
     //printf("%d\n",buffer_size);
     //size_t sample_num=buffer_size/sizeof(float);
-    void * p;
-    memset(output_buffer, 0, buffer_size);
-    p=pushQ(input_buffer, buffer_size);
     
-    int offset=32;
-    get_sample(p,offset, buffer_size, output_buffer);
+    memset(output_buffer, 0, buffer_size);
+    Cur_Pointer=pushQ(input_buffer, buffer_size);
+    
+
+    get_sample(Cur_Pointer,offset, buffer_size, output_buffer);
     
 
     vDSP_vneg(output_buffer,1,output_buffer,1,n);
